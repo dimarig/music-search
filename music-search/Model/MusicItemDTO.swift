@@ -1,11 +1,11 @@
 import Foundation
 
 struct MusicItemDTO: Codable {
-    var artistName: String
-    var collectionName: String
-    var trackName: String
+    var artistName: String?
+    var collectionName: String?
+    var trackName: String?
     var artworkUrl100: String?
-    var trackExplicitness: String
+    var trackExplicitness: String?
     
     enum CodingKeys: String, CodingKey {
         case artistName = "artistName"

@@ -14,7 +14,7 @@ class ApiService{
     }
     
     func getMusicList(query: String) -> Promise<MusicListDTO> {
-        let params = ["term":query, "entity": "musicTrack"]
+        let params = ["term":query]
         return Promise { resolver in
             AF.request(buildURL(for: .search, params: params))
                 .validate()

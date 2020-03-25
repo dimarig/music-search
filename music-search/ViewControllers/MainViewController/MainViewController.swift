@@ -42,8 +42,10 @@ class MainViewController: UIViewController {
     }
     
     func searchMusicForSearchText(searchText: String) {
-        async {
-            try? await(self.viewModel.loadResults(query: searchText))
+        if isFiltering {
+            async {
+                try? await(self.viewModel.loadResults(query: searchText))
+            }
         }
     }
 }

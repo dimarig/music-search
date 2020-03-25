@@ -80,6 +80,6 @@ class MusicTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        artworkImageView.image = nil
+        artworkImageView.image = UIImage(named: "ImagePlaceholder")
     }
 }
