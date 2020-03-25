@@ -6,8 +6,6 @@ import RxSwift
 @testable import music_search
 
 class music_searchTests: XCTestCase {
-
-    
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -68,17 +66,14 @@ class music_searchTests: XCTestCase {
         let model = MusicListModel()
         _ = model.searchResultList.asObservable().bind { result in
             if model.searchResultList.value.count != 0 {
-                if let imageUrl = URL(string: model.searchResultList.value.first?.artworkUrl100 ?? "") {
+                if let imageUrl = URL(string: model.searchResultList.value.randomElement()?.artworkUrl100 ?? "") {
                     XCTAssert(true)
                 } else {
-                    print(model.searchResultList.value.first?.artworkUrl100)
                     XCTFail()
                 }
             }
         }
         
         _ = model.loadResults(query: "David Guetta")
-        
     }
-
 }

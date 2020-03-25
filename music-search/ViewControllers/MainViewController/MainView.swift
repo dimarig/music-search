@@ -9,6 +9,7 @@ class MainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         musicTableView.backgroundColor = .white
+        musicTableView.allowsSelection = false
         addSubview(musicTableView)
     }
     
