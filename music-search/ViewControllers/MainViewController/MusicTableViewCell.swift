@@ -68,13 +68,11 @@ class MusicTableViewCell: UITableViewCell {
         artistLabel.text = musicItem.artistName
         songNameLabel.text = musicItem.trackName
         if let songLogo = musicItem.artworkUrl100, let songImageUrl = URL(string: songLogo) {
-            async {
-                self.artworkImageView.af.setImage(withURL: songImageUrl, placeholderImage: UIImage(named: "ImagePlaceholder"))
-            }
+            self.artworkImageView.af.setImage(withURL: songImageUrl, placeholderImage: UIImage(named: "ImagePlaceholder"))
         }
     }
     
     override func prepareForReuse() {
-        artworkImageView.image = UIImage(named: "ImagePlaceholder")
+//        artworkImageView.image = UIImage(named: "ImagePlaceholder")
     }
 }

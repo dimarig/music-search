@@ -10,15 +10,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let vc = MainViewController()
         let navVC = UINavigationController(rootViewController: vc)
+        if #available(iOS 13.0, *) {
+            navVC.overrideUserInterfaceStyle = .light
+        }
         navVC.modalPresentationStyle = .fullScreen
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-
-
 }
 

@@ -24,7 +24,7 @@ class ApiService{
                     do {
                         let resultList = try decoder.decode(MusicListDTO.self, from: response.value?.data(using: .utf8) ?? Data())
                         resolver.fulfill(resultList)
-                        debugPrint(resultList)
+//                        debugPrint(resultList)
                     }
                     catch(let error){
                         resolver.reject(error)
